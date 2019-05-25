@@ -20,4 +20,10 @@ export class GstGetComponent implements OnInit {
         this.businesses = data;
     });
   }
+
+  /*deleteBusiness(id) {
+    this.bs.deleteBusiness(id).subscribe(res => {
+      console.log('Deleted');
+    });
+  }*/
 }

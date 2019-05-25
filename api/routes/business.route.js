@@ -39,10 +39,8 @@ businessRoutes.route('/edit/:id').get(function (req, res) {
 
 //  Defined update route
 businessRoutes.route('/update/:id').post(function (req, res) {
-    Business.findById(req.params.id, function(err, next, business) {
-    if (!business)
-      return next(new Error('Could not load Document'));
-    else {
+    Business.findById(req.params.id, function(err,business) {
+    
         business.person_name = req.body.person_name;
         business.business_name = req.body.business_name;
         business.business_gst_number = req.body.business_gst_number;
@@ -53,7 +51,7 @@ businessRoutes.route('/update/:id').post(function (req, res) {
       .catch(err => {
             res.status(400).send("unable to update the database");
       });
-    }
+    
   });
 });
 
